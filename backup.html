@@ -74,12 +74,49 @@
         font-size: 14px;
         cursor: pointer;
       }
+      #searchPropertyDiv {
+        position: absolute;
+        top: 5px;
+        left: 900px;
+        z-index: 10;
+        background: white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 4px;
+        font-family: sans-serif;
+        width: 250px;
+      }
+      #searchPropertyButton {
+        padding: 5px;
+        margin: 5px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      /* #searchProperty {
+        width: 100%;
+        padding: 5px;
+        font-size: 14px;
+        cursor: pointer;
+      } */
     </style>
   </head>
   <body>
     <div id="map"></div>
     <div id="layerButtons"></div>
     <!-- Select dropdown on the right side -->
+    <div id="searchPropertyDiv">
+      <label for="areaSelect">Search Property:</label>
+      <div style="display: flex; gap: 4px">
+        <input
+          type="text"
+          id="searchProperty"
+          placeholder="Enter property Id"
+        />
+        <button onclick="searchProperty()" id="searchPropertyButton">
+          Search
+        </button>
+      </div>
+    </div>
     <div id="areaSelectContainer">
       <label for="areaSelect">Select Area (gaj):</label>
       <select id="areaSelect">
@@ -140,6 +177,8 @@
               ],
             },
             properties: {
+              id: "d50a19ff-4669-446f-985c-767d914b3343",
+              pId: "S-12A",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "false",
@@ -161,6 +200,8 @@
               ],
             },
             properties: {
+              id: "8f4909f4-851d-48bf-8f51-fc67122b7d87",
+              pId: "S-28",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "false",
@@ -182,9 +223,11 @@
               ],
             },
             properties: {
+              id: "40d5a79e-a8a5-4540-bdfa-a2600a0fa55c",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "true",
+              pId: "S-14",
             },
           },
           {
@@ -203,9 +246,11 @@
               ],
             },
             properties: {
+              id: "14d8ccaa-54e3-47a8-abed-bdfff3b9b480",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "false",
+              pId: "S-27",
             },
           },
           {
@@ -227,9 +272,11 @@
               ],
             },
             properties: {
+              id: "0e97b7c6-c5f2-4849-a08a-81456175a65d",
               mode: "polygon",
               Area: "1000 sqm",
               Available: "true",
+              pId: "S-15",
             },
           },
           {
@@ -250,9 +297,11 @@
               ],
             },
             properties: {
+              id: "c2ade71f-3e16-43d7-a9fc-d29416039185",
               mode: "polygon",
               Area: "1000 sqm",
               Available: "false",
+              pId: "S-26",
             },
           },
           {
@@ -271,9 +320,11 @@
               ],
             },
             properties: {
+              id: "2871dd9c-72dc-4fe3-9603-8bfaad1b121a",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "false",
+              pId: "S-16",
             },
           },
           {
@@ -292,9 +343,11 @@
               ],
             },
             properties: {
+              id: "80112116-6e08-49c4-afff-b02f3fab5d1e",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "false",
+              pId: "S-25",
             },
           },
           {
@@ -313,9 +366,11 @@
               ],
             },
             properties: {
+              id: "4f921f02-c46a-4c6a-aee0-b778c42221ba",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "true",
+              pId: "S-17",
             },
           },
           {
@@ -334,9 +389,11 @@
               ],
             },
             properties: {
+              id: "2ac0f0a3-2d2e-4071-8b61-0f87dfb468eb",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "false",
+              pId: "S-24",
             },
           },
           {
@@ -355,9 +412,11 @@
               ],
             },
             properties: {
+              id: "8581b963-6578-40b2-af02-feb5a2b32113",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "false",
+              pId: "S-19",
             },
           },
           {
@@ -376,9 +435,11 @@
               ],
             },
             properties: {
+              id: "f72f82d0-da59-4291-b2cd-93a924c416ca",
               mode: "angled-rectangle",
               Area: "1000 sqm",
               Available: "true",
+              pId: "S-22",
             },
           },
           {
@@ -401,9 +462,11 @@
               ],
             },
             properties: {
+              id: "cfacede7-8297-448f-bd51-6eff63010c88",
               mode: "polygon",
               Area: "1000 sqm",
               Available: "false",
+              pId: "S-23",
             },
           },
           {
@@ -424,9 +487,11 @@
               ],
             },
             properties: {
+              id: "16ca3088-826d-40d0-b38e-87a5446b54ec",
               mode: "polygon",
               Area: "1000 sqm",
               Available: "true",
+              pId: "S-18",
             },
           },
           {
@@ -445,9 +510,11 @@
               ],
             },
             properties: {
+              id: "2f493b1b-8767-453f-b317-11cfaa29db40",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "true",
+              pId: "S-29",
             },
           },
           {
@@ -466,9 +533,11 @@
               ],
             },
             properties: {
+              id: "8277673c-6280-440d-8bd5-b7c451c53927",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "false",
+              pId: "S-30",
             },
           },
           {
@@ -487,9 +556,11 @@
               ],
             },
             properties: {
+              id: "5891e90f-4759-4548-b1fa-ff5486aa4091",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "true",
+              pId: "S-31",
             },
           },
           {
@@ -508,9 +579,11 @@
               ],
             },
             properties: {
+              id: "3f1a8616-16ae-474c-b6e9-184992dcf9dd",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "false",
+              pId: "S-32",
             },
           },
           {
@@ -529,9 +602,11 @@
               ],
             },
             properties: {
+              id: "711a953d-0562-4091-824e-e4fc7a04f638",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "false",
+              pId: "S-33",
             },
           },
           {
@@ -550,9 +625,11 @@
               ],
             },
             properties: {
+              id: "8d56d7af-9d40-4569-9116-626ecfac5cad",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "true",
+              pId: "S-34",
             },
           },
           {
@@ -571,9 +648,11 @@
               ],
             },
             properties: {
+              id: "9a025b5b-0b3a-42c6-95fc-e4b49e242461",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "true",
+              pId: "S-35",
             },
           },
           {
@@ -592,9 +671,11 @@
               ],
             },
             properties: {
+              id: "7d599c06-f470-48db-a274-b70035e4fd2a",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "false",
+              pId: "S-36",
             },
           },
           {
@@ -613,9 +694,11 @@
               ],
             },
             properties: {
+              id: "249ba9e9-7373-419b-b837-89f82871537e",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "true",
+              pId: "S-37",
             },
           },
           {
@@ -634,9 +717,11 @@
               ],
             },
             properties: {
+              id: "3ab1de2c-7a20-41be-a73c-0081c99bd8de",
               mode: "angled-rectangle",
               Area: "1500 sqm",
               Available: "true",
+              pId: "S-38",
             },
           },
 
@@ -656,9 +741,11 @@
               ],
             },
             properties: {
+              id: "ea6408ac-65be-4383-bb39-9894f8efb460",
               mode: "angled-rectangle",
               Area: "2000 sqm",
               Available: "false",
+              pId: "S-1",
             },
           },
           {
@@ -677,9 +764,11 @@
               ],
             },
             properties: {
+              id: "02f6ad0d-9606-40e8-bd79-326756f29804",
               mode: "angled-rectangle",
               Area: "2000 sqm",
               Available: "false",
+              pId: "S-2",
             },
           },
           {
@@ -698,9 +787,11 @@
               ],
             },
             properties: {
+              id: "fee33f7d-3f6f-4418-b999-67344518e8d7",
               mode: "angled-rectangle",
               Area: "2000 sqm",
               Available: "false",
+              pId: "S-3",
             },
           },
           {
@@ -719,9 +810,11 @@
               ],
             },
             properties: {
+              id: "252fc529-7a67-4ecb-9f19-4795339881a1",
               mode: "angled-rectangle",
               Area: "2000 sqm",
               Available: "false",
+              pId: "S-4",
             },
           },
           {
@@ -740,9 +833,11 @@
               ],
             },
             properties: {
+              id: "8f828699-e080-4a73-af0b-d706ad7075cc",
               mode: "angled-rectangle",
               Area: "2000 sqm",
               Available: "false",
+              pId: "S-5",
             },
           },
           {
@@ -761,9 +856,11 @@
               ],
             },
             properties: {
+              id: "d502f724-bd54-43a9-b15b-552619072ee1",
               mode: "angled-rectangle",
               Area: "2000 sqm",
               Available: "true",
+              pId: "S-6",
             },
           },
         ],
@@ -790,6 +887,7 @@
               maxzoom: 22,
             },
           ],
+          glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
         },
         center: [77.62362905089208, 27.57973612066543],
         zoom: 13,
@@ -819,7 +917,9 @@
 
         // Add the polygons source and layer for coloring
         addPolygonsLayer(geojsonData.features);
-
+        geojsonData.features.forEach((feature) => {
+          addHtmlMarker(feature);
+        });
         // Setup listener on select dropdown
         document
           .getElementById("areaSelect")
@@ -946,7 +1046,7 @@
           map.setPaintProperty("polygons-outline-layer", "line-width", 5);
         } else {
           const areaValue = String(selectedArea);
-          console.log(areaValue);
+          // console.log(areaValue);
           // Fill color with 0.5 opacity for matching, transparent for others
           map.setPaintProperty("polygons-layer", "fill-color", [
             "case",
@@ -984,7 +1084,7 @@
       }
 
       const filterAvailable = (availableStatus) => {
-        console.log("availableStatus:", availableStatus);
+        // console.log("availableStatus:", availableStatus);
 
         if (availableStatus === "all") {
           // Show all polygons, no filter on either layer
@@ -1022,7 +1122,7 @@
           map.setPaintProperty("polygons-outline-layer", "line-width", 5);
         } else if (availableStatus === "Available") {
           // Filter polygons and outlines to show only available polygons
-          map.setFilter("polygons-layer", ["==", ["get", "Available"],"true"]);
+          map.setFilter("polygons-layer", ["==", ["get", "Available"], "true"]);
           map.setFilter("polygons-outline-layer", [
             "==",
             ["get", "Available"],
@@ -1049,7 +1149,11 @@
           map.setPaintProperty("polygons-outline-layer", "line-width", 3);
         } else if (availableStatus === "notAvailable") {
           // Filter polygons and outlines to show only unavailable polygons
-          map.setFilter("polygons-layer", ["==", ["get", "Available"], "false"]);
+          map.setFilter("polygons-layer", [
+            "==",
+            ["get", "Available"],
+            "false",
+          ]);
           map.setFilter("polygons-outline-layer", [
             "==",
             ["get", "Available"],
@@ -1078,15 +1182,17 @@
       };
 
       map.on("click", "polygons-layer", function (e) {
+        // console.log(e.features[0]);
         const feature = e.features[0];
-        const { Available, Area } = feature.properties;
+        const { Available, Area, id } = feature.properties;
         const coordinates = e.lngLat;
 
         // Create popup content
         const popupContent = `
-        <strong>Available:</strong> ${Available}<br>
-        <strong>Area:</strong> ${Area}
-      `;
+              <strong>id:</strong> ${id}<br>
+              <strong>Available:</strong> ${Available}<br>
+              <strong>Area:</strong> ${Area}
+            `;
 
         // Create and display the popup
         new maplibregl.Popup()
@@ -1094,6 +1200,125 @@
           .setHTML(popupContent)
           .addTo(map);
       });
+
+      const addHtmlMarker = async (data) => {
+        // 1. Compute the centroid of the polygon
+        const centroid = turf.centroid(data);
+
+        // 2. Prepare a GeoJSON feature with the text label (id)
+        const labelFeature = {
+          type: "Feature",
+          geometry: centroid.geometry,
+          properties: {
+            label: data.properties.pId
+              ? data.properties.pId
+              : data.properties.id,
+          },
+        };
+
+        // 3. Add source for the label
+        const sourceId = `label-${data.properties.id}`;
+
+        if (!map.getSource(sourceId)) {
+          map.addSource(sourceId, {
+            type: "geojson",
+            data: {
+              type: "FeatureCollection",
+              features: [labelFeature],
+            },
+          });
+
+          // 4. Add symbol layer for the text
+          map.addLayer({
+            id: sourceId,
+            type: "symbol",
+            source: sourceId,
+            layout: {
+              "text-field": ["get", "label"],
+              "text-size": 16,
+              "text-offset": [0, 0.6],
+              "text-anchor": "top",
+            },
+            paint: {
+              "text-color": "#ffffff",
+            },
+          });
+        }
+        map.moveLayer(sourceId, "polygons-outline-layer");
+      };
+
+      const searchProperty = async () => {
+        const propId = document.getElementById("searchProperty").value.trim();
+        
+
+        let found = false;
+
+        geojsonData.features.forEach((feature) => {
+          if (feature.properties.pId === propId) {
+            const centroid = turf.centroid(feature);
+            map.flyTo({
+              center: centroid.geometry.coordinates,
+              zoom: 19, // Adjust as needed
+              bearing: 45, // Rotate the map (0 is north, 180 is south, etc.)
+              pitch: 60,
+              essential: true,
+            });
+
+            addExcrudePolygons(feature);
+
+            found = true;
+          }
+        });
+
+        if (!found) {
+          window.alert("Property not found");
+        }
+      };
+
+      const addExcrudePolygons = (feature) => {
+        const sourceId = "excrude-polygons-source";
+        const layerId = "excrude-polygons-layer";
+
+        // Remove existing layer and source if present
+        if (map.getLayer(layerId)) map.removeLayer(layerId);
+        if (map.getSource(sourceId)) map.removeSource(sourceId);
+
+        // Add new source
+        map.addSource(sourceId, {
+          type: "geojson",
+          data: feature,
+        });
+
+        // Add new layer
+        map.addLayer({
+          id: layerId,
+          type: "fill-extrusion",
+          source: sourceId,
+          paint: {
+            "fill-extrusion-color": "#ff5733",
+            "fill-extrusion-height": 0, // Start from 0 for animation
+            "fill-extrusion-base": 0,
+            "fill-extrusion-opacity": 0.9,
+          },
+          filter: ["all"],
+        });
+
+        // Wait until map is idle (fully loaded style and layers)
+        map.once("idle", () => {
+          let height = 0;
+          const targetHeight = 40;
+          const step = 0.5;
+
+          function animate() {
+            if (height >= targetHeight) return;
+            height += step;
+            map.setPaintProperty(layerId, "fill-extrusion-height", height);
+            requestAnimationFrame(animate);
+          }
+
+          animate();
+        });
+      };
 
       // const drawControl = new MaplibreTerradrawControl.MaplibreTerradrawControl(
       //   {
